@@ -33,6 +33,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
+          cd TestNG
           chmod +x gradlew  # Make gradlew executable
           ./gradlew build   # Run the build task before tests
       - name: Run Tests
@@ -43,4 +44,4 @@ jobs:
         if: always() #always() # success() , failure(), canceled()
         with:
           name: cucumber reports
-          path: reports/cucumber-report.html # Path to test reports
+          path: TestNG/reports/cucumber-report.html # Path to test reports
